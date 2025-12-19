@@ -1,114 +1,93 @@
+
 import React from 'react';
 import { ProductCategory, Product, Testimonial, GalleryImage } from './types';
 
 export const COLORS = {
-  primary: '#C19A6B', // Desert Sand / Gold
-  secondary: '#121212', // Deep Charcoal
-  accent: '#E5E5E5', // Soft White
-  muted: '#2A2A2A', // Lighter Charcoal
-  background: '#0A0A0A', // Pure Black for depth
-  text: '#FFFFFF',
+  primary: '#C19A6B',
+  secondary: '#0F0F0F',
+  accent: '#F9F7F5',
+  glass: 'rgba(255, 255, 255, 0.03)',
+  textMuted: 'rgba(255, 255, 255, 0.5)',
 };
 
 export const CONTACT_INFO = {
-  phone: '+254 7XX XXX XXX',
-  whatsapp: '2547XXXXXXXX',
-  email: 'info@floorspaceinteriors.co.ke',
-  address: 'Magunas Supermarket Building, Thika Road, Nairobi, Kenya',
-  googleMapsLink: 'https://goo.gl/maps/example',
+  phone: '+254 743 000 000',
+  whatsapp: '254743000000',
+  email: 'concierge@floorspacekenya.com',
+  address: 'Floor 3, Magunas Plaza, Thika Road, Nairobi',
+  googleMapsLink: 'https://goo.gl/maps/floor-space-kenya',
   facebook: 'https://facebook.com/floorspacekenya',
-  instagram: 'https://instagram.com/floorspaceke'
+  instagram: 'https://instagram.com/floorspace.ke'
 };
 
 export const PRODUCTS: Product[] = [
   {
     id: '1',
-    name: 'Royal Heritage Oak LVT',
+    name: 'Antique Nordic Oak',
     category: ProductCategory.LVT,
-    description: 'Impeccable wood textures meet unmatched durability. Our flagship luxury vinyl collection.',
-    price: 'Ksh 2,500 per sqm',
+    description: 'A masterpiece of texture. Hand-scraped visuals with ultimate 7-layer acoustic backing.',
+    price: 'Request Quote',
     image: 'https://images.unsplash.com/photo-1581850518616-bcb8186c3f30?auto=format&fit=crop&q=80&w=1200',
-    features: ['100% Waterproof', 'Nano-Ceramic Coating', 'Commercial Grade'],
+    features: ['Acoustic 22dB Reduction', 'Ceramic Bead Finish', 'Zero VOC'],
     status: 'available'
   },
   {
     id: '2',
-    name: 'Everstone Slate SPC',
+    name: 'Sahara Rigid Core SPC',
     category: ProductCategory.SPC,
-    description: 'The strength of stone with the warmth of wood. Ultra-stable rigid core flooring.',
-    price: 'Ksh 3,200 per sqm',
+    description: 'Engineered for the extreme. A stone-composite core that laughs at humidity and heat.',
+    price: 'Request Quote',
     image: 'https://images.unsplash.com/photo-1622372738946-62e02505feb3?auto=format&fit=crop&q=80&w=1200',
-    features: ['High Density Core', 'Sound Insulation', 'Fire Resistant'],
+    features: ['Indestructible Core', 'Pre-attached IXPE Underlay', 'Click-Lock Pro'],
     status: 'available'
   },
   {
     id: '3',
-    name: 'Calacatta Luxe Wall PVC',
+    name: 'Titanium Slate Wall Panel',
     category: ProductCategory.WALLPAPER,
-    description: 'Seamless marble aesthetics for feature walls. The ultimate statement in interior luxury.',
-    price: 'Ksh 4,500 per sheet',
+    description: 'Seamless architectural wall cladding. Lightweight elegance for feature environments.',
+    price: 'Request Quote',
     image: 'https://images.unsplash.com/photo-1615529328331-f8917597711f?auto=format&fit=crop&q=80&w=1200',
-    features: ['High Gloss Finish', 'Anti-Mold', 'Easy Clean'],
-    status: 'available'
-  },
-  {
-    id: '4',
-    name: 'Imperial Emerald Turf',
-    category: ProductCategory.TURF,
-    description: 'Lush architectural turf designed for high-end residential landscapes and rooftops.',
-    price: 'Ksh 1,800 per sqm',
-    image: 'https://images.unsplash.com/photo-1533467647142-6e88a0cb2420?auto=format&fit=crop&q=80&w=1200',
-    features: ['V-Shape Fiber', 'UV 10-Year Warranty', 'Maximum Drainage'],
+    features: ['Anti-Microbial', 'Class A Fire Rated', 'Satin Polish'],
     status: 'available'
   }
 ];
 
-// Added missing TESTIMONIALS export to fix useSiteData.ts import error
 export const TESTIMONIALS: Testimonial[] = [
   {
     id: 't1',
-    name: 'Amara Okoro',
-    location: 'Karen, Nairobi',
+    name: 'Eng. David Maina',
+    location: 'Westlands, Nairobi',
     rating: 5,
-    text: "The SPC flooring quality is world-class. It's completely transformed our boutique showroom's aesthetic while handling high foot traffic with ease.",
-    date: '2024-05-12',
+    text: "Floor Space Kenya provides the technical depth that most interior suppliers lack. Their SPC selection is the best in East Africa.",
+    date: '2024-08-12',
     published: true
   },
   {
     id: 't2',
-    name: 'Samuel Kiprop',
-    location: 'Muthaiga',
+    name: 'Architect Sarah Mutua',
+    location: 'Karen Resident',
     rating: 5,
-    text: "Professional installation and premium materials. Their LVT collection offers textures so realistic you'd swear it was solid hardwood.",
-    date: '2024-06-20',
-    published: true
-  },
-  {
-    id: 't3',
-    name: 'Wanjiku Kamau',
-    location: 'Westlands',
-    rating: 5,
-    text: "Exceptional service from consultation to finish. The marble-finish wall PVC panels are the highlight of our new executive offices.",
-    date: '2024-07-05',
+    text: "The texture and light reflection on the Nordic Oak LVT are indistinguishable from real wood. Truly premium finishes.",
+    date: '2024-09-05',
     published: true
   }
 ];
 
 export const GALLERY_IMAGES: GalleryImage[] = [
-  { id: 'g1', url: 'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&q=80&w=1200', title: 'Minimalist Penthouse', category: 'LVT', type: 'image' },
-  { id: 'g2', url: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&q=80&w=1200', title: 'Corporate Executive Suite', category: 'SPC', type: 'image' },
-  { id: 'g3', url: 'https://images.unsplash.com/photo-1595428774223-ef52624120d2?auto=format&fit=crop&q=80&w=1200', title: 'Architectural Feature Wall', category: 'Wall Decor', type: 'image' },
-  { id: 'g4', url: 'https://images.unsplash.com/photo-1591825729269-caeb344f6df2?auto=format&fit=crop&q=80&w=1200', title: 'Rooftop Oasis', category: 'Turf', type: 'image' }
+  { id: 'g1', url: 'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&q=80&w=1200', title: 'Modern Penthouse', category: 'LVT', type: 'image' },
+  { id: 'g2', url: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&q=80&w=1200', title: 'Executive Suite', category: 'SPC', type: 'image' },
+  { id: 'g3', url: 'https://images.unsplash.com/photo-1595428774223-ef52624120d2?auto=format&fit=crop&q=80&w=1200', title: 'Feature Wall PVC', category: 'Wall Decor', type: 'image' }
 ];
 
 export const Logo = ({ className = "h-8", light = false }: { className?: string; light?: boolean }) => (
-  <div className={`flex items-center gap-3 font-bold tracking-tight ${className}`}>
-    <div className={`${light ? 'bg-white text-black' : 'bg-wood text-white'} p-1.5 rounded-lg flex items-center justify-center aspect-square h-full shadow-lg`}>
-      <span className="text-sm font-black italic">FS</span>
+  <div className={`flex items-center gap-4 font-bold tracking-tight ${className}`}>
+    <div className={`w-10 h-10 rounded-xl flex items-center justify-center border ${light ? 'border-white/20 bg-white/5' : 'border-wood/30 bg-wood/10'}`}>
+      <span className={`text-lg font-black italic ${light ? 'text-white' : 'text-wood'}`}>FS</span>
     </div>
-    <div className="flex flex-col leading-none">
-      <span className={`text-lg font-black tracking-tighter ${light ? 'text-white' : 'text-white'}`}>FLOOR SPACE</span>
-      <span className={`text-[9px] font-bold uppercase tracking-[0.2em] ${light ? 'text-white/50' : 'text-wood'}`}>Interiors Kenya</span>
+    <div className="flex flex-col">
+      <span className="text-xl font-black tracking-tight leading-none text-white">FLOOR SPACE</span>
+      <span className="text-[9px] font-black uppercase tracking-[0.4em] text-wood/80">Kenya</span>
     </div>
   </div>
 );

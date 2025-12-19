@@ -4,74 +4,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Floor Space Interiors | Luxury Flooring & Interior Finishes Kenya</title>
-    <meta name="description" content="Elevate your space with premium LVT, SPC flooring, and interior décor. Kenya's most trusted luxury flooring brand.">
+    <title>Floor Space Interiors | The Pinnacle of Kenyan Luxury Flooring</title>
+    <meta name="description" content="Step into a world of architectural elegance. Premium LVT, SPC, and Bespoke Interior Finishes.">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
     <style>
         :root {
             --wood: #C19A6B;
-            --charcoal: #121212;
-            --cream: #F9F7F5;
+            --charcoal: #0F0F0F;
+            --gold: #D4AF37;
         }
+        
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
             background-color: var(--charcoal);
-            color: white;
+            color: #E5E5E5;
             overflow-x: hidden;
+            letter-spacing: -0.01em;
         }
+
         h1, h2, h3, .font-display {
             font-family: 'Playfair Display', serif;
+            letter-spacing: -0.02em;
         }
-        
-        /* Custom Scrollbar */
+
+        /* Luxury Scrollbar */
         ::-webkit-scrollbar {
-            width: 6px;
+            width: 4px;
         }
         ::-webkit-scrollbar-track {
-            background: #1a1a1a;
+            background: #000;
         }
         ::-webkit-scrollbar-thumb {
-            background: #C19A6B;
-            border-radius: 10px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #a17d52;
+            background: linear-gradient(to bottom, var(--wood), transparent);
+            border-radius: 20px;
         }
 
-        /* Glassmorphism Utilities */
+        /* Glassmorphism System */
         .glass {
-            background: rgba(255, 255, 255, 0.03);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-        }
-        .glass-dark {
-            background: rgba(0, 0, 0, 0.6);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        /* Animations */
-        @keyframes fade-up {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        .animate-reveal {
-            animation: fade-up 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(24px) saturate(180%);
+            -webkit-backdrop-filter: blur(24px) saturate(180%);
+            border: 1px solid rgba(255, 255, 255, 0.08);
         }
         
-        .stagger-1 { animation-delay: 0.1s; }
-        .stagger-2 { animation-delay: 0.2s; }
-        .stagger-3 { animation-delay: 0.3s; }
-
-        ::selection {
-            background: var(--wood);
-            color: white;
+        .glass-dark {
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
         }
 
-        .bg-wood { background-color: var(--wood); }
-        .text-wood { color: var(--wood); }
-        .border-wood { border-color: var(--wood); }
+        /* Cinematic Motion */
+        .spring-up {
+            animation: spring-up 1.2s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+        }
+
+        @keyframes spring-up {
+            from { opacity: 0; transform: translateY(60px) scale(0.98); }
+            to { opacity: 1; transform: translateY(0) scale(1); }
+        }
+
+        .hover-tilt {
+            transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+        .hover-tilt:hover {
+            transform: translateY(-10px) rotateX(2deg) rotateY(2deg);
+        }
+
+        /* Typography spacing utility */
+        .tracking-luxury { letter-spacing: 0.5em; }
+        
+        ::selection {
+            background: var(--wood);
+            color: #000;
+        }
+
+        /* Custom spacing for pro feel */
+        .section-padding { padding-top: 10rem; padding-bottom: 10rem; }
+        @media (max-width: 768px) {
+            .section-padding { padding-top: 5rem; padding-bottom: 5rem; }
+        }
     </style>
 <script type="importmap">
 {
