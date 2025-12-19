@@ -7,6 +7,8 @@ import { Products } from './pages/Products';
 import { About } from './pages/About';
 import { Gallery } from './pages/Gallery';
 import { Contact } from './pages/Contact';
+import { AdminLogin } from './pages/Admin/Login';
+import { AdminPanel } from './pages/Admin/AdminPanel';
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -20,15 +22,18 @@ const App: React.FC = () => {
   return (
     <Router>
       <ScrollToTop />
-      <Layout>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/products" element={<Products />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/gallery" element={<Gallery />} />
-          <Route path="/contact" element={<Contact />} />
-        </Routes>
-      </Layout>
+      <Routes>
+        {/* Frontend Routes */}
+        <Route path="/" element={<Layout><Home /></Layout>} />
+        <Route path="/products" element={<Layout><Products /></Layout>} />
+        <Route path="/about" element={<Layout><About /></Layout>} />
+        <Route path="/gallery" element={<Layout><Gallery /></Layout>} />
+        <Route path="/contact" element={<Layout><Contact /></Layout>} />
+        
+        {/* Admin Routes */}
+        <Route path="/admin" element={<AdminPanel />} />
+        <Route path="/admin/login" element={<AdminLogin />} />
+      </Routes>
     </Router>
   );
 };

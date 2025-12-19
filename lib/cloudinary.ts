@@ -1,11 +1,10 @@
 
 /**
  * Configuration for Cloudinary.
- * Replace these with your actual cloud name and unsigned preset.
  */
 const CLOUDINARY_CONFIG = {
-  cloudName: "floor-space-kenya", // Replace with your cloud name
-  uploadPreset: "floor_space_unsigned" // Replace with your unsigned upload preset
+  cloudName: "ds2mbrzcn",
+  uploadPreset: "real_unsigned"
 };
 
 /**

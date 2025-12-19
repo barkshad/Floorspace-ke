@@ -1,17 +1,18 @@
 
 import React, { useState } from 'react';
 import { ShoppingCart, MessageCircle, Info } from 'lucide-react';
-import { PRODUCTS, CONTACT_INFO } from '../constants';
+import { useSiteData } from '../hooks/useSiteData';
 import { ProductCategory } from '../types';
 
 export const Products: React.FC = () => {
+  const { products, config } = useSiteData();
   const [activeCategory, setActiveCategory] = useState<string>('All');
 
-  const categories = ['All', ...Object.values(ProductCategory)];
+  const categories = ['All', 'LVT Flooring', 'SPC Flooring', 'Artificial Turf', 'Wallpapers & PVC'];
 
   const filteredProducts = activeCategory === 'All' 
-    ? PRODUCTS 
-    : PRODUCTS.filter(p => p.category === activeCategory);
+    ? products 
+    : products.filter(p => p.category === activeCategory);
 
   return (
     <div className="py-12 bg-gray-50 min-h-screen">
@@ -24,7 +25,6 @@ export const Products: React.FC = () => {
           </p>
         </div>
 
-        {/* Filter Bar */}
         <div className="flex flex-wrap justify-center gap-2 mb-12">
           {categories.map((cat) => (
             <button
@@ -41,7 +41,6 @@ export const Products: React.FC = () => {
           ))}
         </div>
 
-        {/* Product Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8">
           {filteredProducts.map((p) => (
             <div key={p.id} className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all border border-gray-100 group">
@@ -58,26 +57,14 @@ export const Products: React.FC = () => {
               <div className="p-6">
                 <h3 className="font-bold text-lg mb-2 group-hover:text-wood transition-colors">{p.name}</h3>
                 <p className="text-gray-600 text-sm mb-4 line-clamp-2">{p.description}</p>
-                
-                {p.features && (
-                  <div className="flex flex-wrap gap-1 mb-4">
-                    {p.features.slice(0, 2).map((f, i) => (
-                      <span key={i} className="bg-gray-100 text-[10px] text-gray-500 px-2 py-0.5 rounded-full">
-                        {f}
-                      </span>
-                    ))}
-                  </div>
-                )}
-
                 <div className="flex items-center justify-between mt-auto pt-4 border-t border-gray-50">
                   <div>
                     <p className="text-xs text-gray-400 uppercase font-bold tracking-wider">Estimated Price</p>
                     <p className="font-bold text-wood">{p.price}</p>
                   </div>
                   <a
-                    href={`https://wa.me/${CONTACT_INFO.whatsapp}?text=Hi, I am interested in ${p.name}`}
+                    href={`https://wa.me/${config.whatsapp}?text=Hi, I am interested in ${p.name}`}
                     className="bg-green-500 text-white p-2.5 rounded-xl hover:bg-green-600 transition-colors shadow-lg shadow-green-200"
-                    title="Inquire on WhatsApp"
                   >
                     <MessageCircle size={20} />
                   </a>
@@ -86,13 +73,6 @@ export const Products: React.FC = () => {
             </div>
           ))}
         </div>
-
-        {filteredProducts.length === 0 && (
-          <div className="text-center py-20">
-            <Info size={48} className="mx-auto text-gray-300 mb-4" />
-            <p className="text-gray-500">More products coming soon to this category!</p>
-          </div>
-        )}
       </div>
     </div>
   );
