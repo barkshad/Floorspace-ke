@@ -1,29 +1,77 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Floor Space Interiors | Premium Flooring & Interior Finishes Kenya</title>
-    <meta name="description" content="Discover premium LVT, SPC flooring, vinyl wallpapers, and artificial turf at Floor Space Kenya. Located at Magunas Supermarket Building, Thika Road.">
+    <title>Floor Space Interiors | Luxury Flooring & Interior Finishes Kenya</title>
+    <meta name="description" content="Elevate your space with premium LVT, SPC flooring, and interior décor. Kenya's most trusted luxury flooring brand.">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --wood: #C19A6B;
+            --charcoal: #121212;
+            --cream: #F9F7F5;
+        }
         body {
-            font-family: 'Open Sans', sans-serif;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--charcoal);
+            color: white;
+            overflow-x: hidden;
         }
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Montserrat', sans-serif;
+        h1, h2, h3, .font-display {
+            font-family: 'Playfair Display', serif;
         }
-        .bg-wood {
-            background-color: #8B5E3C;
+        
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
         }
-        .text-wood {
-            color: #8B5E3C;
+        ::-webkit-scrollbar-track {
+            background: #1a1a1a;
         }
-        .border-wood {
-            border-color: #8B5E3C;
+        ::-webkit-scrollbar-thumb {
+            background: #C19A6B;
+            border-radius: 10px;
         }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #a17d52;
+        }
+
+        /* Glassmorphism Utilities */
+        .glass {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .glass-dark {
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Animations */
+        @keyframes fade-up {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-reveal {
+            animation: fade-up 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        
+        .stagger-1 { animation-delay: 0.1s; }
+        .stagger-2 { animation-delay: 0.2s; }
+        .stagger-3 { animation-delay: 0.3s; }
+
+        ::selection {
+            background: var(--wood);
+            color: white;
+        }
+
+        .bg-wood { background-color: var(--wood); }
+        .text-wood { color: var(--wood); }
+        .border-wood { border-color: var(--wood); }
     </style>
 <script type="importmap">
 {

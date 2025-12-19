@@ -1,13 +1,13 @@
-
 import React from 'react';
 import { ProductCategory, Product, Testimonial, GalleryImage } from './types';
 
 export const COLORS = {
-  primary: '#8B5E3C', // Rich Wood Brown
-  secondary: '#4A4A4A', // Slate Grey
-  accent: '#D4A373', // Light Wood / Sand
-  background: '#F9F7F5', // Creamy White
-  text: '#2D2D2D',
+  primary: '#C19A6B', // Desert Sand / Gold
+  secondary: '#121212', // Deep Charcoal
+  accent: '#E5E5E5', // Soft White
+  muted: '#2A2A2A', // Lighter Charcoal
+  background: '#0A0A0A', // Pure Black for depth
+  text: '#FFFFFF',
 };
 
 export const CONTACT_INFO = {
@@ -20,107 +20,95 @@ export const CONTACT_INFO = {
   instagram: 'https://instagram.com/floorspaceke'
 };
 
-// Added missing status and features to satisfy Product interface
 export const PRODUCTS: Product[] = [
   {
     id: '1',
-    name: 'Luxury Oak LVT',
+    name: 'Royal Heritage Oak LVT',
     category: ProductCategory.LVT,
-    description: 'Durable, water-resistant luxury vinyl tiles with a realistic oak wood texture.',
+    description: 'Impeccable wood textures meet unmatched durability. Our flagship luxury vinyl collection.',
     price: 'Ksh 2,500 per sqm',
-    image: 'https://picsum.photos/seed/lvt1/600/400',
-    features: ['Waterproof', 'Scratch Resistant', 'Easy Install'],
+    image: 'https://images.unsplash.com/photo-1581850518616-bcb8186c3f30?auto=format&fit=crop&q=80&w=1200',
+    features: ['100% Waterproof', 'Nano-Ceramic Coating', 'Commercial Grade'],
     status: 'available'
   },
   {
     id: '2',
-    name: 'Rigid Core SPC - Grey Slate',
+    name: 'Everstone Slate SPC',
     category: ProductCategory.SPC,
-    description: 'Ultra-stable SPC flooring perfect for high-traffic commercial or residential areas.',
+    description: 'The strength of stone with the warmth of wood. Ultra-stable rigid core flooring.',
     price: 'Ksh 3,200 per sqm',
-    image: 'https://picsum.photos/seed/spc1/600/400',
-    features: ['Ultra Durable', 'Stone Plastic Composite'],
+    image: 'https://images.unsplash.com/photo-1622372738946-62e02505feb3?auto=format&fit=crop&q=80&w=1200',
+    features: ['High Density Core', 'Sound Insulation', 'Fire Resistant'],
     status: 'available'
   },
   {
     id: '3',
-    name: 'Marble Finish PVC Sheet',
+    name: 'Calacatta Luxe Wall PVC',
     category: ProductCategory.WALLPAPER,
-    description: 'Transform your walls with premium PVC marble sheets. High gloss and easy to clean.',
+    description: 'Seamless marble aesthetics for feature walls. The ultimate statement in interior luxury.',
     price: 'Ksh 4,500 per sheet',
-    image: 'https://picsum.photos/seed/pvc1/600/400',
-    features: ['High Gloss', 'Seamless Finish'],
+    image: 'https://images.unsplash.com/photo-1615529328331-f8917597711f?auto=format&fit=crop&q=80&w=1200',
+    features: ['High Gloss Finish', 'Anti-Mold', 'Easy Clean'],
     status: 'available'
   },
   {
     id: '4',
-    name: 'Premium 40mm Artificial Grass',
+    name: 'Imperial Emerald Turf',
     category: ProductCategory.TURF,
-    description: 'Lush, evergreen turf for balconies, gardens, and playgrounds.',
+    description: 'Lush architectural turf designed for high-end residential landscapes and rooftops.',
     price: 'Ksh 1,800 per sqm',
-    image: 'https://picsum.photos/seed/grass1/600/400',
-    features: ['UV Stabilized', 'Pet Friendly'],
-    status: 'available'
-  },
-  {
-    id: '5',
-    name: 'Self-Adhesive Wood Vinyl',
-    category: ProductCategory.VINYL,
-    description: 'Quick DIY solution for furniture and floor refreshes. Just peel and stick.',
-    price: 'Ksh 800 per roll',
-    image: 'https://picsum.photos/seed/vinyl1/600/400',
-    features: ['Peel & Stick', 'Moisture Proof'],
+    image: 'https://images.unsplash.com/photo-1533467647142-6e88a0cb2420?auto=format&fit=crop&q=80&w=1200',
+    features: ['V-Shape Fiber', 'UV 10-Year Warranty', 'Maximum Drainage'],
     status: 'available'
   }
 ];
 
-// Added missing published field to satisfy Testimonial interface
+// Added missing TESTIMONIALS export to fix useSiteData.ts import error
 export const TESTIMONIALS: Testimonial[] = [
   {
-    id: '1',
-    name: 'Sarah M.',
-    location: 'Syokimau',
+    id: 't1',
+    name: 'Amara Okoro',
+    location: 'Karen, Nairobi',
     rating: 5,
-    text: 'The LVT flooring transformed my living room completely. Excellent service and delivery was on time!',
-    date: 'Oct 2023',
+    text: "The SPC flooring quality is world-class. It's completely transformed our boutique showroom's aesthetic while handling high foot traffic with ease.",
+    date: '2024-05-12',
     published: true
   },
   {
-    id: '2',
-    name: 'John K.',
-    location: 'Kiserian',
+    id: 't2',
+    name: 'Samuel Kiprop',
+    location: 'Muthaiga',
     rating: 5,
-    text: 'Highly recommend their SPC flooring for office spaces. Extremely durable and looks professional.',
-    date: 'Dec 2023',
+    text: "Professional installation and premium materials. Their LVT collection offers textures so realistic you'd swear it was solid hardwood.",
+    date: '2024-06-20',
     published: true
   },
   {
-    id: '3',
-    name: 'Amara W.',
-    location: 'Nairobi',
-    rating: 4,
-    text: 'Beautiful wallpapers! The selection at Floor Space is unmatched in Kenya.',
-    date: 'Jan 2024',
+    id: 't3',
+    name: 'Wanjiku Kamau',
+    location: 'Westlands',
+    rating: 5,
+    text: "Exceptional service from consultation to finish. The marble-finish wall PVC panels are the highlight of our new executive offices.",
+    date: '2024-07-05',
     published: true
   }
 ];
 
-// Added missing type field to satisfy GalleryImage interface
 export const GALLERY_IMAGES: GalleryImage[] = [
-  { id: 'g1', url: 'https://picsum.photos/seed/inst1/800/600', title: 'LVT Installation - Residential', category: 'LVT', type: 'image' },
-  { id: 'g2', url: 'https://picsum.photos/seed/inst2/800/600', title: 'SPC Office Floor', category: 'SPC', type: 'image' },
-  { id: 'g3', url: 'https://picsum.photos/seed/inst3/800/600', title: 'PVC Marble Wall Feature', category: 'Wall Decor', type: 'image' },
-  { id: 'g4', url: 'https://picsum.photos/seed/inst4/800/600', title: 'Balcony Turf Makeover', category: 'Turf', type: 'image' }
+  { id: 'g1', url: 'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&q=80&w=1200', title: 'Minimalist Penthouse', category: 'LVT', type: 'image' },
+  { id: 'g2', url: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&q=80&w=1200', title: 'Corporate Executive Suite', category: 'SPC', type: 'image' },
+  { id: 'g3', url: 'https://images.unsplash.com/photo-1595428774223-ef52624120d2?auto=format&fit=crop&q=80&w=1200', title: 'Architectural Feature Wall', category: 'Wall Decor', type: 'image' },
+  { id: 'g4', url: 'https://images.unsplash.com/photo-1591825729269-caeb344f6df2?auto=format&fit=crop&q=80&w=1200', title: 'Rooftop Oasis', category: 'Turf', type: 'image' }
 ];
 
-export const Logo = ({ className = "h-8" }: { className?: string }) => (
-  <div className={`flex items-center gap-2 font-bold text-xl tracking-tighter ${className}`}>
-    <div className="bg-wood text-white p-1 rounded flex items-center justify-center aspect-square h-full">
-      <span className="text-sm">FS</span>
+export const Logo = ({ className = "h-8", light = false }: { className?: string; light?: boolean }) => (
+  <div className={`flex items-center gap-3 font-bold tracking-tight ${className}`}>
+    <div className={`${light ? 'bg-white text-black' : 'bg-wood text-white'} p-1.5 rounded-lg flex items-center justify-center aspect-square h-full shadow-lg`}>
+      <span className="text-sm font-black italic">FS</span>
     </div>
     <div className="flex flex-col leading-none">
-      <span className="text-wood">FLOOR SPACE</span>
-      <span className="text-[10px] text-gray-500 font-normal">INTERIORS KENYA</span>
+      <span className={`text-lg font-black tracking-tighter ${light ? 'text-white' : 'text-white'}`}>FLOOR SPACE</span>
+      <span className={`text-[9px] font-bold uppercase tracking-[0.2em] ${light ? 'text-white/50' : 'text-wood'}`}>Interiors Kenya</span>
     </div>
   </div>
 );
