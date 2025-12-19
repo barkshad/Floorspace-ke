@@ -16,11 +16,23 @@ export const AdminLogin: React.FC = () => {
     e.preventDefault();
     setLoading(true);
     setError('');
+
+    // Enforce the specific password requirement "12345"
+    if (password !== '12345') {
+      setError('Invalid Access Key. Please use the authorized credentials.');
+      setLoading(false);
+      return;
+    }
+
     try {
+      // Proceed with Firebase Authentication
       await signInWithEmailAndPassword(auth, email, password);
       navigate('/admin');
     } catch (err: any) {
-      setError('Invalid credentials. Please try again.');
+      console.error("Auth error:", err);
+      // For the sake of the demo, if Firebase is not yet seeded with this user, 
+      // we show a descriptive error but still require the '12345' check first.
+      setError('Authentication failed. Please ensure the Admin user is created in Firebase with this password.');
     } finally {
       setLoading(false);
     }
@@ -51,19 +63,20 @@ export const AdminLogin: React.FC = () => {
               <input
                 type="email"
                 required
-                className="w-full pl-12 pr-4 py-4 rounded-xl border border-gray-200 focus:ring-2 focus:ring-wood focus:border-transparent outline-none transition-all"
+                disabled
+                className="w-full pl-12 pr-4 py-4 rounded-xl border border-gray-200 bg-gray-50 text-gray-500 cursor-not-allowed outline-none"
                 value={email}
-                onChange={(e) => setEmail(e.target.value)}
               />
             </div>
           </div>
           <div>
-            <label className="block text-sm font-bold text-gray-700 mb-2">Access Key</label>
+            <label className="block text-sm font-bold text-gray-700 mb-2">Access Key (Current: 12345)</label>
             <div className="relative">
               <Lock className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400" size={18} />
               <input
                 type="password"
                 required
+                autoFocus
                 className="w-full pl-12 pr-4 py-4 rounded-xl border border-gray-200 focus:ring-2 focus:ring-wood focus:border-transparent outline-none transition-all"
                 placeholder="Enter password..."
                 value={password}
@@ -74,7 +87,7 @@ export const AdminLogin: React.FC = () => {
           <button
             type="submit"
             disabled={loading}
-            className="w-full bg-wood text-white py-4 rounded-xl font-bold shadow-lg shadow-wood/20 flex items-center justify-center gap-2 hover:bg-[#6F4B30] transition-all"
+            className="w-full bg-wood text-white py-4 rounded-xl font-bold shadow-lg shadow-wood/20 flex items-center justify-center gap-2 hover:bg-[#6F4B30] transition-all disabled:opacity-50"
           >
             {loading ? <Loader2 className="animate-spin" /> : 'Log In to CMS'}
           </button>
