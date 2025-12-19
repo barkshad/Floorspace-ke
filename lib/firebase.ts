@@ -9,7 +9,7 @@ import { getFirestore } from "firebase/firestore";
  * rules_version = '2';
  * service cloud.firestore {
  *   match /databases/{database}/documents {
- *     // Allow public read access to site content
+ *     // Allow public read access to site content so visitors can see products
  *     match /siteConfig/{document} {
  *       allow read: if true;
  *       allow write: if request.auth != null;
@@ -25,6 +25,10 @@ import { getFirestore } from "firebase/firestore";
  *     match /testimonials/{document} {
  *       allow read: if true;
  *       allow write: if request.auth != null;
+ *     }
+ *     // Default deny for all other paths
+ *     match /{document=**} {
+ *       allow read, write: if false;
  *     }
  *   }
  * }
