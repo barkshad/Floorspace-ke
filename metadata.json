@@ -1,0 +1,7 @@
+{
+  "name": "Floor Space Interiors Kenya",
+  "description": "A premium modern business website for Floor Space Interiors, showcasing LVT, SPC flooring, wallpapers, and interior finishes in Kenya.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
